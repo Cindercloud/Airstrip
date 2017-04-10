@@ -83,7 +83,7 @@ dependencies {
 }
 
 jar {
-    baseName = 'switch'
+    baseName = 'airstrip'
     version = null
 }
 

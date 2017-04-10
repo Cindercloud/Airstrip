@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+cache:
+  directories:
+  - ".autoconf"
+  - "$HOME/.m2"
+deploy:
+  provider: releases
+  api_key:
+    secure: Wnh+gJP4v8E8SO3d83iNH705C76jrNtpNCOyr1BS40ILJ21LKVQ3mmV47FcZJx9GwASTejnSN1XR5HKZQe7tkGxAi7VJnpb4UKoeSV+IHiZ6qKN6N0JYtGMVVBfOvHHuGetrTI/8zx+ZoRh5rnDmGc4kLFfdLplI7K/jz9B+spxXHYn7J1f4C5pO5Beghx3wC6EWEmAhrKv3gmQyF9SyQpT2+EvWf24WYHS0p3KwSxaGRPVtHJw3UxXIp1iL2RTg4uYMasX7cdXqzTXs8ZVDIrn35ODeaZjNsjWqlR2/QjBAGyhelY5QJ94WZHheAIGhDWu/F8/bxS2gS2Os/k6wGH8xCwq9f4lK3C5JYU0t9DvNh5SJ36HtIFMkSjK2oLzzVn0gRM8u2KGoJXADZrJzvtUyFVsuf6M1F1K8p2oC2axsl+iCOxo4qCpp0mGNNlK/WzhCXyCeIfIKEUNoT0cqENWOdydTBIHLtBp64EaRas7UOVLH9g3A3W9LSFfPpWtAd4VSwnd9sInZ0FOzj67Hm1ALohYeCIWG8rlVlLZs4hOYwIll96Z/KfZkg9LSSpGwgxIVbQDzFiRaVF4joIpu9s1B1caFwxGnzNp0mmHrVgH0GR0DON4UWCWFhXhhyvwtXeW0Qd1p66j1oNyM4EJXawXdA8RJ0UKzbzlTRd3T8FA=
+  file: web/build/libs/airstrip.jar
+  on:
+    repo: Cindercloud/Airstrip
