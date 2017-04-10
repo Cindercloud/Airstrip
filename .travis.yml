@@ -12,3 +12,4 @@ deploy:
   file: web/build/libs/airstrip.jar
   on:
     repo: Cindercloud/Airstrip
+    tags: true
