@@ -1,0 +1,26 @@
+spring:
+    application:
+        name: Switch
+    messages:
+        basename: i18n/messages
+    thymeleaf:
+        mode: XHTML
+
+server:
+    port: 8080
+    session:
+        cookie:
+            http-only: true
+
+debug: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+cloud:
+    cinder:
+        peapol:
+            login-url: http://localhost:9999/login
+        switch:
+            base-url: http://localhost:8080

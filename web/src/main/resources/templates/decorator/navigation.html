@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<div th:fragment="topnav">
+
+    <!--=== Header ===-->
+    <div class="header">
+        <div class="container">
+            <h1 class="logo" href="index.html">
+                <div style="margin: 20px 0;">
+                    <span class="color-green">C</span>ryptotrader
+                </div>
+            </h1>
+        </div><!--/end container-->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll home">
+                        <a th:href="@{/}">Home</a>
+                    </li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/register}">Register</a>
+                    </li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/login}">Login</a>
+                    </li>
+                    <li class="dropdown" sec:authorize="isAuthenticated()">
+                        <a href="#">Paper Trading</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/user/papertrade-configurations}">Configuration</a></li>
+                            <li><a th:href="@{/user/papertrade}">History</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" sec:authorize="isAuthenticated()">
+                        <a href="#">Trading</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/indicators}">Indicators</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" sec:authorize="isAuthenticated()">
+                        <a href="#">admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/admin/users}">user management</a></li>
+                            <li><a th:href="@{/admin/papertrade}">papertrade</a></li>
+                            <li><a th:href="@{/admin/import-configurations}">import-configurations</a></li>
+                        </ul>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <a th:href="@{/logout}">Logout</a>
+                    </li>
+                </ul>
+            </div><!--/end container-->
+        </div><!--/navbar-collapse-->
+    </div>
+    <!--=== End Header ===-->
+
+</div>
+
+</body>
+</html>

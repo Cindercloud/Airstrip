@@ -1,0 +1,13 @@
+spring:
+    redis:
+        host: localhost
+        port: 6379
+    jackson:
+        serialization.indent_output: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/switch
+        username: switch
+        password: switch
+        driver-class-name: com.mysql.jdbc.Driver
+    thymeleaf:
+        cache: false

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="decorator/decorator"
+>
+
+<div layout:fragment="main-content">
+
+
+    <!-- Tabs -->
+    <form id="applicationForm" data-parsley-validate="data-parsley-validate" th:method="POST" th:action="@{/applications/save}" th:object="${applicationDto}"
+          class="form-horizontal form-label-left">
+
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2 th:if="${applicationDto.id == null}">Add new Application</h2>
+                        <h2 th:unless="${applicationDto.id == null}">Edit Application</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input th:field="*{name}" th:errorclass="parsley-error" type="text" id="name" required="required" class="form-control col-md-7 col-xs-12" />
+                                <ul class="parsley-errors-list filled">
+                                    <li  th:each="err : ${#fields.errors('name')}" th:text="${err}"  class="parsley-required">This value is required.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Description:
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="email" th:field="*{description}" th:errorclass="parsley-error" class="form-control col-md-7 col-xs-12" type="text" name="notes" />
+                                <ul class="parsley-errors-list filled">
+                                    <li  th:each="err : ${#fields.errors('description')}" th:text="${err}"  class="parsley-required">This value is required.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <a th:href="@{/applications}" class="btn btn-primary">Cancel</a>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<div layout:fragment="footer-content">
+    <script th:src="@{/assets/vendor/validator/validator.min.js}"></script>
+
+    <script type="application/javascript">
+        $('form')
+            .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+            .on('change', 'select.required', validator.checkField)
+            .on('keypress', 'input[required][pattern]', validator.checkField);
+        $('form').submit(function(e) {
+            e.preventDefault();
+            var submit = true;
+            if (!validator.checkAll($(this))) {
+                submit = false;
+            }
+            if (submit)
+                this.submit();
+            return false;
+        });
+    </script>
+</div>
+
+</html>
