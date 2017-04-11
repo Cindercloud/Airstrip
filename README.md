@@ -2,3 +2,16 @@ Airstrip [![Build Status](https://travis-ci.org/Cindercloud/Airstrip.svg?branch=
 ===
 
 > Landing Page for CinderCloud
+
+
+##Building
+
+```
+gradle clean build
+```
+
+##Running
+
+```
+gradle bootRun
+```
