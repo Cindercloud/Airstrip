@@ -141,9 +141,6 @@ Desktop.ini
 ######################
 .eslintcache
 
-web/src/main/resources/static/**
-web/src/main/resources/web-src/node/
-
 src/main/resources/config/application-oauth.yml
 
 auth0.properties
