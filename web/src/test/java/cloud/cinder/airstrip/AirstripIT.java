@@ -1,4 +1,4 @@
-package cloud.cinder.switchapp;
+package cloud.cinder.airstrip;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

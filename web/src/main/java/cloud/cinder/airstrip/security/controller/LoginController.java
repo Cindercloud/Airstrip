@@ -1,4 +1,4 @@
-package cloud.cinder.switchapp.security.controller;
+package cloud.cinder.airstrip.security.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

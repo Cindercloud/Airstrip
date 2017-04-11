@@ -1,4 +1,4 @@
-package cloud.cinder.switchapp.config.auth0;
+package cloud.cinder.airstrip.config.auth0;
 
 import com.auth0.Auth0AuthorityStrategy;
 import com.auth0.Auth0User;

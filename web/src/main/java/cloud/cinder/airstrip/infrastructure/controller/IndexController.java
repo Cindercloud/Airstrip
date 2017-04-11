@@ -1,4 +1,4 @@
-package cloud.cinder.switchapp.infrastructure.controller;
+package cloud.cinder.airstrip.infrastructure.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
